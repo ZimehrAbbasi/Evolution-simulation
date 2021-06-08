@@ -2,9 +2,9 @@
 
 Simulation of a genetic algorithm written using the P5 library. Link to the simulation can be found [here.](https://zimehrabbasi.github.io/Evolution-simulation/)
 
-## Screenshots
+## Result
 
-![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+![Result](genetic.gif)
 
   
 ## Acknowledgements
