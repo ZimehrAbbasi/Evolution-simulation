@@ -1,3 +1,4 @@
+// class representing every dot
 class Organism{
   constructor(){
     this.x = random(WIDTH * 1/3, WIDTH * 2/3);
@@ -8,6 +9,7 @@ class Organism{
     this.index = 0;
   }
   
+  // Creating the genes for an organism
   create_genes(distance){
     let genes = [];
     for (let j = 0; j < distance; j++) {
@@ -17,12 +19,14 @@ class Organism{
     console.log(genes.length);
   }
   
+  // Calculating the fitness
   calc_fitness(target){
     const distance = dist(this.x, this.y, target.x, target.y);
     let normalised = distance / HEIGHT;
     this.fitness = 1 - normalised;
   }
   
+  // Crossover with a partner
   crossover(partner){
     let child = new Organism();
     for(let j = 0;j <= target_index;j++){
@@ -51,6 +55,7 @@ class Organism{
     return child;
   }
   
+  // Mutations in the genes
   mutate(rate){
     for (let i = 0; i < GENE_LENGTH; i++) {
       if (random(1) < rate) {
@@ -61,6 +66,7 @@ class Organism{
   
 }
 
+// CONSTANTS
 WIDTH = 400;
 HEIGHT = 400;
 GENE_LENGTH = [];
@@ -77,11 +83,11 @@ target_index = 0;
 target_range = false;
 average_fitness = 0;
 temp = 0;
+
 // How dystopian on a scale of 1 to 10
 DYSTOPIAN_PERCENTAGE = 1;
-achieved = []
 
-
+// Setup for the display
 function setup() {
   createCanvas(WIDTH, HEIGHT);
   for (let i = 0; i < organism_num; i++){
@@ -89,6 +95,7 @@ function setup() {
   }
 }
 
+// Calculating the average
 function avg_calc(){
   let avg = 0;
   for(let body of population){
@@ -97,11 +104,13 @@ function avg_calc(){
   return avg/population.length
 }
 
+// Seeing if the average of the fitness if above a certain threshold
 function count_calc(){
   let avg = avg_calc();
   return avg > 0.85;
 }
 
+// Natural selection function
 function natural_selection(){
   matingpool = [];
   for (let pop of population){
@@ -112,6 +121,7 @@ function natural_selection(){
   }
 }
 
+// Reproduction
 function reproduce(){
   for(let i = 0; i < organism_num;i++){
     let organism_parent1_index = floor(random(1, matingpool.length * (11-DYSTOPIAN_PERCENTAGE)/10));
@@ -123,6 +133,7 @@ function reproduce(){
   }
 }
 
+// Event listener for the mouse click
 function mouseClicked() {
   let distance = 0;
   if(Target_array.length == 0){
@@ -136,10 +147,10 @@ function mouseClicked() {
     organism.create_genes(distance);
   }
   GENE_LENGTH.push(distance);
-  achieved.push(false);
   console.log(GENE_LENGTH);
 }
 
+// Draw function
 function draw() {
   background(0);
   
