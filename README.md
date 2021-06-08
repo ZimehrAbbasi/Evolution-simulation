@@ -1,6 +1,6 @@
 # Evolution-simulation
 
-Simulation of a genetic algorithm written using the P5 library. Link to the simulation [Evolution Simulation](https://zimehrabbasi.github.io/Evolution-simulation/)
+Simulation of a genetic algorithm written using the P5 library. Link to the simulation can be found [here.](https://zimehrabbasi.github.io/Evolution-simulation/)
 
 ## Result
 
