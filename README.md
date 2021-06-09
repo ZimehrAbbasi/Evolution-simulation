@@ -12,7 +12,7 @@ Link to the simulation can be found [here.](https://zimehrabbasi.github.io/Evolu
 ## Acknowledgements
 
  - [Luke Garrigan](https://dev.to/lukegarrigan/genetic-algorithms-in-javascript-mc3)
-    This project is an extension of this project on genetic algorithms
+    Evolution-simulation is an extension of this project on genetic algorithms
 
   
 ## License
